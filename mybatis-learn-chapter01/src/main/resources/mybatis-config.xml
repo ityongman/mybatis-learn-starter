@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--
+        配置 environments使用properties 的三种方式
+        Note: 注意这里的配置都是明文, 如果是加密信息, 需要对加密信息进行解密,
+        可以使用第三方工具也可以使用, 也可以自己加载相关配置文件通过解密算法进行解密
+    -->
+    <!-- 方式三、当前文件引入 properties 配置参数 -->
+    <properties>
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="senga"/>
+    </properties>
+
+    <!-- 方式二、参数来自properties 外部引用参数 -->
+    <!--
+    <properties resource="config.properties"/>
+    -->
+    
+    
+    <objectFactory type="com.ityongman.mybatis.config.CustomizeObjectFactory">
+        <property name="name" value="CustomizeObjectFactory"/>
+    </objectFactory>
+    
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <pBlogroperty name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 方式一、 直接配置datasource参数 -->
+    <!--
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="senga"/>
+            </dataSource>
+        </environment>
+    </environments>
+    -->
+
+    <mappers>
+        <mapper resource="com/ityongman/mybatis/dao/BlogMapper.xml"/>
+    </mappers>
+</configuration>
