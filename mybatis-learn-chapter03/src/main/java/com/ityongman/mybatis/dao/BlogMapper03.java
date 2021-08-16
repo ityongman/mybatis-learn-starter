@@ -4,12 +4,14 @@ import com.ityongman.mybatis.entity.Blog;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.Map;
+
 /**
  * @Author shedunze
  * @Date 2021/8/3 9:46 下午
  * @Description
  */
-public interface BlogMapper {
+public interface BlogMapper03 {
     /**
      * 根据id查询文章
      * @param id
@@ -27,4 +29,8 @@ public interface BlogMapper {
      */
     @Select("select id, name, author_id as authorId from Blog where id = #{id}")
     Blog selectBlogByAnnotation(@Param("id") Long id) ;
+
+    Map selectByOccupy(@Param("id") Long id) ;
+
+    Map selectBySql(@Param("id") Long id);
 }

@@ -1,6 +1,6 @@
 package com.ityongman.mybatis.web;
 
-import com.ityongman.mybatis.dao.BlogMapper;
+import com.ityongman.mybatis.dao.BlogMapper03;
 import com.ityongman.mybatis.entity.Blog;
 import com.ityongman.mybatis.util.SqlSessionFactoryUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -18,8 +18,8 @@ public class BlogServiceMainWithScope02 {
 
         try(SqlSession session = SqlSessionFactoryUtil.openSession()){
             Long id = 1L ;
-            BlogMapper blogMapper = session.getMapper(BlogMapper.class);
-            Blog blog = blogMapper.selectBlog(id);
+            BlogMapper03 blogMapper03 = session.getMapper(BlogMapper03.class);
+            Blog blog = blogMapper03.selectBlog(id);
 
             log.debug(String.format("Query001 id=%s, Blog = %s", id, blog.toString()));
 
@@ -29,8 +29,8 @@ public class BlogServiceMainWithScope02 {
              * 2. <setting name="localCacheScope" value="SESSION"/> 同一个会话中, 相同sql只会在最初时查询一次DB
              */
 
-            BlogMapper blogMapper02 = session.getMapper(BlogMapper.class);
-            Blog blog02 = blogMapper.selectBlog(id);
+            BlogMapper03 blogMapper0302 = session.getMapper(BlogMapper03.class);
+            Blog blog02 = blogMapper03.selectBlog(id);
 
             log.debug(String.format("Query002 id=%s, Blog = %s", id, blog02.toString()));
         }

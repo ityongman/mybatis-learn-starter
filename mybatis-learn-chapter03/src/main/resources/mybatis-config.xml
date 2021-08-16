@@ -43,6 +43,7 @@
         <setting name="localCacheScope" value="SESSION"/>
         <setting name="jdbcTypeForNull" value="OTHER"/>
         <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 
     <typeHandlers>
@@ -84,6 +85,6 @@
     -->
 
     <mappers>
-        <mapper resource="com/ityongman/mybatis/dao/BlogMapper.xml"/>
+        <mapper resource="com/ityongman/mybatis/dao/blogMapper03.xml"/>
     </mappers>
 </configuration>

@@ -1,6 +1,6 @@
 package com.ityongman.mybatis.web;
 
-import com.ityongman.mybatis.dao.BlogMapper;
+import com.ityongman.mybatis.dao.BlogMapper03;
 import com.ityongman.mybatis.entity.Blog;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -40,8 +40,8 @@ public class BlogServiceMainWithXml01 {
         //方式二、通过 SqlSession 实例来直接执行已映射的 SQL 语句
         try(SqlSession session = sqlSessionFactory.openSession()){
             Long id = 1L ;
-            BlogMapper blogMapper = session.getMapper(BlogMapper.class);
-            Blog blog = blogMapper.selectBlog(id);
+            BlogMapper03 blogMapper03 = session.getMapper(BlogMapper03.class);
+            Blog blog = blogMapper03.selectBlog(id);
             System.out.println(String.format("Query id=%s, Blog = %s", id, blog.toString()));
         }
 
@@ -49,8 +49,8 @@ public class BlogServiceMainWithXml01 {
         //方式三、通过 注解方式 执行已映射的 SQL 语句
         try(SqlSession session = sqlSessionFactory.openSession()){
             Long id = 1L ;
-            BlogMapper blogMapper = session.getMapper(BlogMapper.class);
-            Blog blog = blogMapper.selectBlogByAnnotation(id);
+            BlogMapper03 blogMapper03 = session.getMapper(BlogMapper03.class);
+            Blog blog = blogMapper03.selectBlogByAnnotation(id);
             System.out.println(String.format("Query id=%s, Blog = %s", id, blog.toString()));
         }
     }
