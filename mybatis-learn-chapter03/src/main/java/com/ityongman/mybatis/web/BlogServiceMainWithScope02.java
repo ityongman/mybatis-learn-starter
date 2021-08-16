@@ -1,4 +1,4 @@
-package com.ityongman.mybatis.experiment;
+package com.ityongman.mybatis.web;
 
 import com.ityongman.mybatis.dao.BlogMapper;
 import com.ityongman.mybatis.entity.Blog;
