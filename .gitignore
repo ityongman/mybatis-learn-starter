@@ -1,1 +1,15 @@
 /mybatis-learn-chapter02/target/classes/
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/config/CustomizeObjectFactory.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/dao/BlogMapper03.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/dao/BlogMapper03.xml
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/entity/Blog.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/handler/MyIntegerTypeHandler.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/handler/MyStringTypeHandler.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/util/SqlSessionFactoryUtil.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/web/BlogServiceMainWithScope02.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/web/BlogServiceMainWithXml01.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/web/Test03.class
+/mybatis-learn-chapter03/target/classes/com/ityongman/mybatis/web/Test04.class
+/mybatis-learn-chapter03/target/classes/config.properties
+/mybatis-learn-chapter03/target/classes/log4j.properties
+/mybatis-learn-chapter03/target/classes/mybatis-config.xml

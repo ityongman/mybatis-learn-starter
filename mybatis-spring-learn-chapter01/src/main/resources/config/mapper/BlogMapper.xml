@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ityongman.dao.mapper.BlogMapper">
+
+    <!--
+    参考: https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Parameters
+        flushCache: 将其设置为 true 后，只要语句被调用，都会导致本地缓存和二级缓存被清空，默认值：false。
+    -->
+    <select id="selectBlog" resultType="com.ityongman.dao.domain.Blog" flushCache="false">
+        select id, name, author_id as authorId from Blog where id = #{id}
+    </select>
+
+    <!-- sql 标签元素-->
+    <!-- 一、定义可重用的 SQL 代码片段 -->
+    <sql id="blogColumns">
+        ${alias}.id, ${alias}.name, ${alias}.author_id
+    </sql>
+
+    <select id="selectByOccupy" resultType="map">
+        SELECT
+        <include refid="blogColumns">
+            <property name="alias" value="t1"/>
+        </include>
+        FROM Blog t1
+        WHERE id = #{id}
+    </select>
+
+    <!-- 二、可以在 include 元素的 refid 属性或内部语句中使用属性值 -->
+    <sql id="someTable">
+        tb_${tableName}
+    </sql>
+
+    <sql id="someInclude">
+        FROM
+        <include refid="${includeTarget}" />
+    </sql>
+
+    <select id="selectBySql" resultType="map">
+        SELECT
+        id , name , process_chain_json as processChainJson
+        <include refid="someInclude">
+            <property name="includeTarget" value="someTable" />
+            <property name="tableName" value="strategy_config" />
+        </include>
+        WHERE id = #{id}
+    </select>
+</mapper>

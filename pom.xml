@@ -12,6 +12,7 @@
         <module>mybatis-learn-chapter01</module>
         <module>mybatis-learn-chapter02</module>
         <module>mybatis-learn-chapter03</module>
+        <module>mybatis-spring-learn-chapter01</module>
     </modules>
 
     <properties>
