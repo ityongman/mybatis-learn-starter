@@ -7,4 +7,5 @@
     <import resource="classpath:applicationMvc.xml" />
     <import resource="classpath:applicationDatasource.xml" />
     <import resource="classpath:applicationService.xml"/>
+    <import resource="classpath:applicationConfig.xml"/>
 </beans>

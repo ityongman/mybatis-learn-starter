@@ -1,6 +1,7 @@
 package com.ityongman.dao.mapper;
 
 import com.ityongman.dao.domain.Blog;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,6 +12,7 @@ import java.util.Map;
  * @Date 2021/8/3 9:46 下午
  * @Description
  */
+@Mapper
 public interface BlogMapper {
     /**
      * 根据id查询文章
