@@ -22,7 +22,7 @@
 </bean>
 ```
 
-- 注解驱动, @MapperScan 、@MapperScans、@Mapper
+- 注解驱动, @MapperScan 、@MapperScans
 ```java
 @Configuration
 @MapperScan("com.ityongman.dao.mapper")
