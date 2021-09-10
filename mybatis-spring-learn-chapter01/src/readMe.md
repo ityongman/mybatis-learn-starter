@@ -21,6 +21,10 @@
     <property name="basePackage" value="com.ityongman.dao.mapper" />
 </bean>
 ```
+- 引入 mybatis-spring xsd 配置 http://mybatis.org/schema/mybatis-spring
+```xml
+<mybatis:scan base-package="com.ityongman.dao.mapper" />
+```
 
 - 注解驱动, @MapperScan 、@MapperScans
 ```java
