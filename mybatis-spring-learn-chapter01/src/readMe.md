@@ -33,3 +33,5 @@
     public class MapperConfig {
 }
 ```
+
+- MapperFactoryBean mapper工厂bean(没提供样例)
